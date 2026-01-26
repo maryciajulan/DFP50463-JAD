@@ -18,6 +18,8 @@ public class ClinicAppoinment {
 			
 			JButton bookJButton = new JButton("Book Appoinment");
 			
+			String[] optionStrings = {""}
+			
 			
 			frame.setSize(350, 200);
 			JPanel panel = new JPanel(new FlowLayout());
