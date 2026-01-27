@@ -4,39 +4,45 @@ import java.awt.*;
 
 import javax.swing.*;
 
-public class BMICalculatorV2 {
+public class BMICalculatorV4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		JFrame frame = new JFrame ("BMI Calculator 2.1 - GridLayout");
-		frame.setLayout(new GridLayout(4,2));
+		JFrame frame = new JFrame ("BMI Calculator 2.3 - BoxLayout");
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+		
+		Dimension boxSizeDimension = new Dimension(200,30);
 		
 		JLabel weightLabel = new JLabel("Weight (kg): ");
-		frame.add(weightLabel);
+		panel.add(weightLabel);
 		
 		JTextField weightBox = new JTextField(10);
-		frame.add(weightBox);
+		panel.add(weightBox);
+		panel.add(Box.createVerticalStrut(20));
 		
 		JLabel heightLabel = new JLabel("Height (m): ");
-		frame.add(heightLabel);
+		panel.add(heightLabel);
 		
 		JTextField heightBox = new JTextField(10);
-		frame.add(heightBox);
+		panel.add(heightBox);
+		panel.add(Box.createVerticalStrut(20));
 		
 		
 		JButton button = new JButton("Calculate");
-		frame.add(button);
+		panel.add(button);
 		
-		JLabel fillerLabel = new JLabel("  ");
-		frame.add(fillerLabel);
 		
 		JLabel resultLabel = new JLabel("Your BMI result:  ");
-		frame.add(resultLabel);
+		panel.add(resultLabel);
 		
 		JTextField resulttBox = new JTextField(10);
-		frame.add(resulttBox);
+		panel.add(resulttBox);
+		panel.add(Box.createVerticalStrut(20));
 		
+		frame.add(panel);
 		frame.setSize(350, 200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
