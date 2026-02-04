@@ -28,28 +28,27 @@ public class InvoiceGenerator {
 
 		JTextField txtRate = new JTextField(15);
 		inputJPanel.add(txtRate);
-		
+
 		frame.add(inputJPanel, BorderLayout.NORTH);
-		
+
 		JSpinner spinHours = new JSpinner(new SpinnerNumberModel(10, 5, 100, 1));
 		spinHours.setPreferredSize(new Dimension(165, 25));
-		 inputJPanel.add(spinHours);
+		inputJPanel.add(spinHours);
 
 		JTextArea areaPreview = new JTextArea(12, 22);
 		areaPreview.setText("Invoice Details...");
 
 		JScrollPane scroll = new JScrollPane(areaPreview);
-		
-		frame.add(scroll, BorderLayout.CENTER);
 
+		frame.add(scroll, BorderLayout.CENTER);
 
 		JButton btnExport = new JButton("Export PDF");
 		JButton btnClear = new JButton("Clear");
-		
+
 		JPanel buttonJPanel = new JPanel();
 		buttonJPanel.add(btnExport);
 		buttonJPanel.add(btnClear);
-		
+
 		frame.add(buttonJPanel, BorderLayout.SOUTH);
 
 		frame.setVisible(true);
