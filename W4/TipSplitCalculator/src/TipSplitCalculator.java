@@ -1,5 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +7,7 @@ import javax.swing.*;
 public class TipSplitCalculator {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("Tip & Split Calculator");
 		frame.setLayout(new BorderLayout());
 
@@ -66,5 +66,7 @@ public class TipSplitCalculator {
 		frame.setSize(350, 200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+
 	}
+
 }

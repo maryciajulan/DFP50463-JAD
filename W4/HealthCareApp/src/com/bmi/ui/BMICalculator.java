@@ -1,0 +1,67 @@
+package com.bmi.ui;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class BMICalculator {
+
+	public static void launch() {
+		// TODO Auto-generated method stub
+		JFrame frame = new JFrame("WOW BMI Calculator");
+		frame.setLayout(new GridLayout(6,1,10,10));
+		frame.setLocationRelativeTo(null);
+		frame.setSize(350, 450);
+		
+		JLabel instructionJLabel = new JLabel("Choose Unit and Enter Details", JLabel.CENTER);
+		
+		String[] unitStrings = {"Metrics (kg/m)", "Imperial (lb/in)"};
+		JComboBox<String> unitComboBox = new JComboBox<>(unitStrings);
+		
+		JTextField weightInputTextField = new JTextField("Enter Weight");
+		JTextField heightInputTextField = new JTextField("Enter Height");
+		JButton calculateButton = new JButton("Calculate BMI");
+		JLabel resultLabel = new JLabel("Result: ---", JLabel.CENTER);
+		
+		calculateButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				try {
+					double weight = Double.parseDouble(weightInputTextField.getText());
+					double height = Double.parseDouble(heightInputTextField.getText());
+					
+					double bmi;
+					
+					if(unitComboBox.getSelectedIndex() == 0) {
+						bmi = weight/(height*height);
+					} else {
+						bmi = 703 * (weight/(height*height));
+					}
+					
+					resultLabel.setText(String.format("Result: %.2f", bmi));
+					resultLabel.setForeground(Color.BLACK);
+					
+				} catch (NumberFormatException ex) {
+					// TODO: handle exception
+					resultLabel.setText("Invalid Input");
+					resultLabel.setForeground(Color.RED);
+				}	
+			}
+		});
+		
+		frame.add(instructionJLabel);
+		frame.add(unitComboBox);
+		frame.add(weightInputTextField);
+		frame.add(heightInputTextField);
+		frame.add(calculateButton);
+		frame.add(resultLabel);
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+	}
+
+}
