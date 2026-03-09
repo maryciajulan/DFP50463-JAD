@@ -8,6 +8,9 @@ username = request.getParameter("username");
 password = request.getParameter("password");
 
 if ("mj".equals(username) && "mjpmu".equals(password)) {
+	HttpSession sesi = request.getSession();
+	sesi.setAttribute("namaPengguna", username);
+	sesi.setAttribute("sudahLogin", true);
 	response.sendRedirect("index.jsp");
 } else {
 	errorMessage = "Invalid Username or Password";

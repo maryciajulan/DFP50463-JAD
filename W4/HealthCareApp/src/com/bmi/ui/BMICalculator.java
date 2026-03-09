@@ -1,3 +1,7 @@
+//Nama : Marycia Julan
+//No. Pendaftaran : 20DIT23F2008
+//PROBLEM BASED ASSIGNMENT 1
+
 package com.bmi.ui;
 
 import javax.swing.*;

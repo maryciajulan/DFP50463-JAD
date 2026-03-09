@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SPMP | login </title>
+<title> SPMP | login </title>
 </head>
 <body>
 	<h2>User Login</h2>
